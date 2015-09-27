@@ -1,0 +1,121 @@
+Getting & Cleaning Data Project 
+===============================
+Study Design
+============
+As part of the 'Getting & Cleaning Data' Course in the Data Science Specialization from John Hopkins and Coursera this study was conducted as a course project. This exercise was to create a tidy data set from a set of fitness tracker data collected in a study by UCI (ref: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The original data was found here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+Our task was to: 
+	* Merge the training and the test sets to create one data set.
+	* Extract only the measurements on the mean and standard deviation for each measurement. (See list in Codebook section below) 
+	* Use descriptive activity names to name the activities in the data set (this essentially used the data from the "activity_labels.txt" file to replace the activity ids)
+	* Appropriately labels the data set with descriptive variable names (this essentially took the data from the "feature_labels.txt" file to replace the default column names with the correct features in the dataset) 
+	* From the above data set, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+
+The features are best described in the 'features_info.txt' file found with the dataset, an excerpt of which, describing how the measurements were taken, can be found below. Recall, we only kept those features that were either the mean or standard deviation of the measurements or calculations. 
+
+Our tidy data set provides the average of each of these 'features' for each subject (30 subjects) and activity (6 activities) of that subject (resulting in 180 combinations of subject and activity). 
+
+
+
+Codebook
+========
+"subject_id" - the identifier of the subject using the fitness tracker (ranges from 1 to 30)
+"activity"  - the activity being conducted by the user when the 'features' were recorded (activities include WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+"tBodyAcc-mean()-X" - mean of the feature from the UCI study
+"tBodyAcc-mean()-Y" - mean of the feature from the UCI study 
+"tBodyAcc-mean()-Z" - mean of the feature from the UCI study 
+"tBodyAcc-std()-X" - mean of the feature from the UCI study 
+"tBodyAcc-std()-Y" - mean of the feature from the UCI study 
+"tBodyAcc-std()-Z" - mean of the feature from the UCI study 
+"tGravityAcc-mean()-X" - mean of the feature from the UCI study 
+"tGravityAcc-mean()-Y" - mean of the feature from the UCI study 
+"tGravityAcc-mean()-Z" - mean of the feature from the UCI study 
+"tGravityAcc-std()-X" - mean of the feature from the UCI study 
+"tGravityAcc-std()-Y" - mean of the feature from the UCI study 
+"tGravityAcc-std()-Z" - mean of the feature from the UCI study 
+"tBodyAccJerk-mean()-X" - mean of the feature from the UCI study 
+"tBodyAccJerk-mean()-Y" - mean of the feature from the UCI study 
+"tBodyAccJerk-mean()-Z" - mean of the feature from the UCI study 
+"tBodyAccJerk-std()-X" - mean of the feature from the UCI study 
+"tBodyAccJerk-std()-Y" - mean of the feature from the UCI study 
+"tBodyAccJerk-std()-Z" - mean of the feature from the UCI study 
+"tBodyGyro-mean()-X" - mean of the feature from the UCI study 
+"tBodyGyro-mean()-Y" - mean of the feature from the UCI study 
+"tBodyGyro-mean()-Z" - mean of the feature from the UCI study 
+"tBodyGyro-std()-X" - mean of the feature from the UCI study 
+"tBodyGyro-std()-Y" - mean of the feature from the UCI study 
+"tBodyGyro-std()-Z" - mean of the feature from the UCI study 
+"tBodyGyroJerk-mean()-X" - mean of the feature from the UCI study 
+"tBodyGyroJerk-mean()-Y" - mean of the feature from the UCI study 
+"tBodyGyroJerk-mean()-Z" - mean of the feature from the UCI study 
+"tBodyGyroJerk-std()-X" - mean of the feature from the UCI study 
+"tBodyGyroJerk-std()-Y" - mean of the feature from the UCI study 
+"tBodyGyroJerk-std()-Z" - mean of the feature from the UCI study 
+"tBodyAccMag-mean()" - mean of the feature from the UCI study 
+"tBodyAccMag-std()" - mean of the feature from the UCI study 
+"tGravityAccMag-mean()" - mean of the feature from the UCI study 
+"tGravityAccMag-std()" - mean of the feature from the UCI study 
+"tBodyAccJerkMag-mean()" - mean of the feature from the UCI study 
+"tBodyAccJerkMag-std()" - mean of the feature from the UCI study 
+"tBodyGyroMag-mean()" - mean of the feature from the UCI study 
+"tBodyGyroMag-std()" - mean of the feature from the UCI study 
+"tBodyGyroJerkMag-mean()" - mean of the feature from the UCI study 
+"tBodyGyroJerkMag-std()" - mean of the feature from the UCI study 
+"fBodyAcc-mean()-X" - mean of the feature from the UCI study 
+"fBodyAcc-mean()-Y" - mean of the feature from the UCI study 
+"fBodyAcc-mean()-Z" - mean of the feature from the UCI study 
+"fBodyAcc-std()-X" - mean of the feature from the UCI study 
+"fBodyAcc-std()-Y" - mean of the feature from the UCI study 
+"fBodyAcc-std()-Z" - mean of the feature from the UCI study 
+"fBodyAcc-meanFreq()-X" - mean of the feature from the UCI study 
+"fBodyAcc-meanFreq()-Y" - mean of the feature from the UCI study 
+"fBodyAcc-meanFreq()-Z" - mean of the feature from the UCI study 
+"fBodyAccJerk-mean()-X" - mean of the feature from the UCI study 
+"fBodyAccJerk-mean()-Y" - mean of the feature from the UCI study 
+"fBodyAccJerk-mean()-Z" - mean of the feature from the UCI study 
+"fBodyAccJerk-std()-X" - mean of the feature from the UCI study 
+"fBodyAccJerk-std()-Y" - mean of the feature from the UCI study 
+"fBodyAccJerk-std()-Z" - mean of the feature from the UCI study 
+"fBodyAccJerk-meanFreq()-X" - mean of the feature from the UCI study 
+"fBodyAccJerk-meanFreq()-Y" - mean of the feature from the UCI study 
+"fBodyAccJerk-meanFreq()-Z" - mean of the feature from the UCI study 
+"fBodyGyro-mean()-X" - mean of the feature from the UCI study 
+"fBodyGyro-mean()-Y" - mean of the feature from the UCI study 
+"fBodyGyro-mean()-Z" - mean of the feature from the UCI study 
+"fBodyGyro-std()-X" - mean of the feature from the UCI study 
+"fBodyGyro-std()-Y" - mean of the feature from the UCI study 
+"fBodyGyro-std()-Z" - mean of the feature from the UCI study 
+"fBodyGyro-meanFreq()-X" - mean of the feature from the UCI study 
+"fBodyGyro-meanFreq()-Y" - mean of the feature from the UCI study 
+"fBodyGyro-meanFreq()-Z" - mean of the feature from the UCI study 
+"fBodyAccMag-mean()" - mean of the feature from the UCI study 
+"fBodyAccMag-std()" - mean of the feature from the UCI study 
+"fBodyAccMag-meanFreq()" - mean of the feature from the UCI study 
+"fBodyBodyAccJerkMag-mean()" - mean of the feature from the UCI study 
+"fBodyBodyAccJerkMag-std()" - mean of the feature from the UCI study 
+"fBodyBodyAccJerkMag-meanFreq()" - mean of the feature from the UCI study 
+"fBodyBodyGyroMag-mean()" - mean of the feature from the UCI study 
+"fBodyBodyGyroMag-std()" - mean of the feature from the UCI study 
+"fBodyBodyGyroMag-meanFreq()" - mean of the feature from the UCI study 
+"fBodyBodyGyroJerkMag-mean()" - mean of the feature from the UCI study 
+"fBodyBodyGyroJerkMag-std()" - mean of the feature from the UCI study 
+"fBodyBodyGyroJerkMag-meanFreq()" - mean of the feature from the UCI study 
+"angle(tBodyAccMean,gravity)" - mean of the feature from the UCI study 
+"angle(tBodyAccJerkMean),gravityMean)" - mean of the feature from the UCI study 
+"angle(tBodyGyroMean,gravityMean)" - mean of the feature from the UCI study 
+"angle(tBodyGyroJerkMean,gravityMean)" - mean of the feature from the UCI study 
+"angle(X,gravityMean)" - mean of the feature from the UCI study 
+"angle(Y,gravityMean)" - mean of the feature from the UCI study 
+"angle(Z,gravityMean)"
+
+		Feature Selection 
+		=================
+
+		The features selected for this database come from the accelerometer and gyroscope 		3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+		Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+		Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+		These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
