@@ -13,7 +13,7 @@ Our task was to:
 
 The features are best described in the 'features_info.txt' file found with the dataset, an excerpt of which, describing how the measurements were taken, can be found below. Recall, we only kept those features that were either the mean or standard deviation of the measurements or calculations. 
 
-Our tidy data set provides the average of each of these 'features' for each subject (30 subjects) and activity (6 activities) of that subject (resulting in 180 combinations of subject and activity). 
+Our tidy data set provides the average of each of these 'features' for each subject (30 subjects) and activity (6 activities) of that subject (resulting in 180 combinations of subject and activity).  This is a wide format which I believe is more easily digested by a human. Note: There is also commented out code in the run_analysis.R script to rearrange this into a narrow format tidy data set.
 
 
 
@@ -106,7 +106,12 @@ Codebook
 "angle(tBodyGyroJerkMean,gravityMean)" - mean of the feature from the UCI study 
 "angle(X,gravityMean)" - mean of the feature from the UCI study 
 "angle(Y,gravityMean)" - mean of the feature from the UCI study 
-"angle(Z,gravityMean)"
+"angle(Z,gravityMean)" - mean of the feature from the UCI study
+
+It should be noted that the above measures for 'Features' were normalized and bounded within [-1,1]. We have since taken the mean of these features and thus there are no discernable units. 
+
+
+
 
 		Feature Selection 
 		=================
